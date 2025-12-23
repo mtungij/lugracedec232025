@@ -1323,7 +1323,6 @@ public function get_guarator_data($customer_id, $comp_id) {
             pr.loan_aprov,
             dat.account_name AS deposit_account,
             wat.account_name AS withdrawal_account,
-            -- Determine type of payment
             CASE 
                 WHEN pr.lecod_day < DATE(pr.time_rec) THEN 'Backdated'
                 WHEN pr.lecod_day > DATE(pr.time_rec) THEN 'Prepaid'
@@ -1337,8 +1336,9 @@ public function get_guarator_data($customer_id, $comp_id) {
         LEFT JOIN tbl_account_transaction wat ON wat.trans_id = pr.with_trans
         WHERE pr.comp_id = ?
           AND DATE(pr.time_rec) = ?
+          AND pr.lecod_day != ?
         ORDER BY pr.prev_id DESC
-    ", [$comp_id, $date]);
+    ", [$comp_id, $date, $date]);
 
     foreach ($data->result() as $r) {
         $r->total_deducted = $this->get_total_witloan_deducted($r->loan_id);
