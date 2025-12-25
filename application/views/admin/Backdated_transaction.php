@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="block-header">
                 <div class="row">
-                    <div class="col-lg-6 col-md-8 col-sm-12">
+                   <div class="col-12 col-md-8 col-lg-6">
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="<?php echo base_url("admin/index"); ?>"><i class="icon-home"></i></a></li>                            
                             <li class="breadcrumb-item active">Penalt Payments</li>
@@ -23,22 +23,21 @@
                             </div> 
                         </div> 
                     <?php endif; ?>
-            <div class="row clearfix">
-                <div class="col-md-12">
-                    
-                        
-                      
+           <div class="row clearfix">
+          <div class="col-12">
 
-                <div class="col-lg-12">
                     <div class="card">
                          <div class="header">
                             <h2>Backdated payments made today</h2> 
                             <div class="pull-right">
-                              <a href="<?= base_url('admin/print_backdate_cash') ?>" target="_blank" class="btn btn-info mb-3">
-    <i class="icon-printer"></i> Print PDF
-</a>
+                            <div class="d-flex justify-content-md-end justify-content-start mt-2 mt-md-0">
+    <a href="<?= base_url('admin/print_backdate_cash') ?>" 
+       target="_blank" 
+       class="btn btn-info btn-sm w-100 w-md-auto">
+        <i class="icon-printer"></i> Print PDF
+    </a>
+</div>
 
-                            </div>   
                              </div>
                           <div class="body">
                             <div class="table-responsive">

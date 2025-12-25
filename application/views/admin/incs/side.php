@@ -196,7 +196,7 @@ foreach ($capital_permissions as $perm) {
 ?>
 
 <?php
-$customer_permissions = ['Register Customer', 'All Customer'];
+$customer_permissions = ['Register Customer', 'All customer'];
 $show_customer = false;
 foreach ($customer_permissions as $perm) {
     if (has_permission($perm)) {
@@ -408,7 +408,7 @@ foreach ($customer_permissions as $perm) {
             <li><a href="<?= base_url('admin/customer') ?>">Register Customer</a></li>
         <?php endif; ?>
 
-        <?php if (has_permission('All Customer')): ?>
+        <?php if (has_permission('All customer')): ?>
             <li><a href="<?= base_url('admin/all_customer') ?>">All Customer</a></li>
         <?php endif; ?>
     </ul>
